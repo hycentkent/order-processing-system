@@ -1,8 +1,8 @@
 -- Create the database
-CREATE DATABASE db_hilario_capstone;
+CREATE DATABASE db_batch5_ops;
 
 -- Use the created database
-USE db_lastname_capstone;
+USE db_batch5_ops;
 
 -- Create users table
 CREATE TABLE tbl_users (
@@ -14,6 +14,13 @@ CREATE TABLE tbl_users (
     role_id int,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+
+INSERT INTO tbl_users (firstname, email, password, role_id) 
+VALUES
+    ('admin' , 'hycentkent@gmail.com' , ' 12345' , 1);
+
+
 
 -- create table products 
 CREATE TABLE Customers (
@@ -67,4 +74,4 @@ CREATE TABLE Payments (
     payment_method VARCHAR(50), -- Credit Card, PayPal, etc.
     payment_status VARCHAR(50) DEFAULT 'Completed', -- Completed, Pending, Failed
     FOREIGN KEY (order_id) REFERENCES Orders(order_id)
-);git
+);
